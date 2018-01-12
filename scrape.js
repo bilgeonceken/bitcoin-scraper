@@ -75,7 +75,7 @@ const go = () => new Promise((resolve, reject) => {
 			continue
 		}
 
-		const prettyDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getUTCDate()
+		const prettyDate = date.getFullYear() + '-' + (date.getUTCMonth() + 1) + '-' + date.getUTCDate()
 		const dataPath = formatApiUrl(market, prettyDate)
 		const fileName = `${market}-${prettyDate}.json`
 		const filePath = path.join(dataDir, fileName)
