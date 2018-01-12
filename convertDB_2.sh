@@ -4,6 +4,7 @@
 
 PATH_BS=.
 DATA_DIR=data
+mkdir $PATH_BS/data
 src=$PATH_BS/$DATA_DIR/bitcoin-history.json
 tar=$PATH_BS/$DATA_DIR/bitcoin-history.sql
 tmp=$PATH_BS/$DATA_DIR/bitcoin-history.tmp
