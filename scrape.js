@@ -11,23 +11,23 @@ const market = 'bitstampUSD'
 
 const dates = {
   from: {
-  	year: 2011,
-  	month: 9,
+  	year: 2017,
+  	month: 11,
   	day: 14
   },
 
   to: {
-  	year: 2017,
-  	month: 08,
+  	year: 2018,
+  	month: 01,
   	day: 9
   },
 }
 
 const baseApiUrl = 'http://bitcoincharts.com/charts/chart.json?'
 
-// Full parms: m=bitstampUSD&SubmitButton=Draw&r=60&i=1-min&c=1&s=2011-09-14&e=2011-09-14&Prev=&Next=&t=S&b=&a1=&m1=10&a2=&m2=25&x=0&i1=&i2=&i3=&i4=&v=1&cv=0&ps=0&l=0&p=0&
+// Full parms: m=bitstampUSD&SubmitButton=Draw&r=1&i=1-min&c=1&s=2011-09-14&e=2011-09-14&Prev=&Next=&t=S&b=&a1=&m1=10&a2=&m2=25&x=0&i1=&i2=&i3=&i4=&v=1&cv=0&ps=0&l=0&p=0&
 const formatApiUrl = (market, date) => {
-	const apiUrl = `${baseApiUrl}m=${market}&SubmitButton=Draw&r=60&i=1-min&c=1&s=${date}&e=${date}&Prev=&Next=&t=S&b=&a1=&m1=10&a2=&m2=25&x=0&i1=&i2=&i3=&i4=&v=1&cv=0&ps=0&l=0&p=0&`
+	const apiUrl = `${baseApiUrl}m=${market}&SubmitButton=Draw&r=1&i=1-min&c=1&s=${date}&e=${date}&Prev=&Next=&t=S&b=&a1=&m1=10&a2=&m2=25&x=0&i1=&i2=&i3=&i4=&v=1&cv=0&ps=0&l=0&p=0&`
 	return apiUrl
 }
 
