@@ -1,4 +1,68 @@
-# Bitcoin Chart Scraper
+# Trading data Downloader for Gekko Trading Bot
+Uses F1LT3R's chart downloader and haxus's json to .db converter script(modified by agrimaldi). Gets the carts from https://bitcoincharts.com/  
+instructions from: http://gekkowarez.com/download-category/trading-data/
+
+## Usage
+Basically you download this thing. Apply the stuff i wrote and after you executed the sciprt you get a xxx.db file. you copy it into history folder of you geekko bot and use for backtesting. I've no idea what are those fixes about.
+
+
+```
+git clone https://github.com/F1LT3R/bitcoin-scraper.git
+sudo apt-get install sqlite3
+cd bitcoin-scraper
+npm install
+```
+
+### Fix Bugs if not already done by the developer meanwhile
+### Font fix
+```
+cd node_modules/figlet/fonts/
+wget http://www.textfiles.com/art/pepper.flf
+cd ../../../
+```
+
+#### spelling fix
+```
+sed -i 's/pepper/Pepper/' combine.js
+sed -i 's/pepper/Pepper/' scrape.js
+```
+#### Fix the URL to get minute candles instead of hour candles:
+```
+sed -i 's/r=60/r=1/g' scrape.js
+```
+
+Configure the market you want to download
+by changing “const market = ‘bitstampUSD’“ to
+whatever you want, plz see
+https://bitcoincharts.com/charts (symbols) for more detailes  
+  
+const market = ‘bitstampUSD’
+
+#### You may also change the timeframe within that file
+const dates = {
+from: {
+year: 2011,
+month: 9,
+day: 14
+},
+
+to: {
+year: 2017,
+month: 08,
+day: 9
+},
+}
+
+#### Now let us do the magic
+```
+./convertDB_2.sh
+```
+```
+mv data/bitstamp_0.1.db /Path/To/Gekko/history/
+```
+
+## The rest of the readme is about bitcoin-scraper and not gekko
+
 
 Scrape the entire Bitcoin chart history to JSON.
 
